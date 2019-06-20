@@ -105,7 +105,7 @@ int main()
       if ((movimento == 'd') || (movimento == 'D')) {
          coluna_atual = coluna_atual + 1;
          /* Se não for chao ou grama ele volta pra posicao anterior */
-         if (mapa[linha_atual][coluna_atual] != CHAO){
+         if ((mapa[linha_atual][coluna_atual] != CHAO) && (mapa[linha_atual][coluna_atual] != CHEGADA)){
             coluna_atual = coluna_atual - 1;
             printf("\n\nups.. ali nau -(TLT)-\n");
             getchar(); getchar();
@@ -120,18 +120,30 @@ int main()
             getchar(); getchar();
          }
       }
+      if(mapa[linha_atual][coluna_atual] == CHEGADA){
+	  	coluna_atual = coluna_atual;
+         
+        	 printf("\n\nups.. VOCE GANHOU OTARIO  \n");
+         	/* Se não for chao ou grama ele volta pra posicao anterior */
+         	if (mapa[linha_atual][coluna_atual] == CHEGADA){
+            	coluna_atual = coluna_atual;
+            	printf("\n nups.. VOCE GANHOU OTARIO  \n");
+            	getchar(); getchar();
+         }
+	  	}
+	  }
       
 	}
-	   while ((movimento != 'x') && (movimento != 'X') && (mapa[linha_atual][coluna_atual] == CHEGADA)) {
-         coluna_atual = coluna_atual;
-         
-         printf("\n\nups.. VOCE GANHOU OTARIO  \n");
-         /* Se não for chao ou grama ele volta pra posicao anterior */
-         if (mapa[linha_atual][coluna_atual] == CHEGADA){
-            coluna_atual = coluna_atual;
-            printf("\n\nups.. VOCE GANHOU OTARIO  \n");
-            getchar(); getchar();
-         }
-      }
-}
+//	   while ((movimento != 'x') && (movimento != 'X') && (mapa[linha_atual][coluna_atual] == CHEGADA)) {
+//         coluna_atual = coluna_atual;
+//         
+//         printf("\n\nups.. VOCE GANHOU OTARIO  \n");
+//         /* Se não for chao ou grama ele volta pra posicao anterior */
+//         if (mapa[linha_atual][coluna_atual] == CHEGADA){
+//            coluna_atual = coluna_atual;
+//            printf("\n nups.. VOCE GANHOU OTARIO  \n");
+//            getchar(); getchar();
+//         }
+//      }
+//}
 
